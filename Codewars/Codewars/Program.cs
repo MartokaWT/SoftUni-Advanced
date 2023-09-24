@@ -1,28 +1,32 @@
-﻿using System;
-
-public class Kata
+﻿using System.Collections.Generic;
+public static class Kata
 {
-	public static string Bmi(double weight, double height)
+	public static string Greet(string language)
 	{
-
-		double bmi = weight / Math.Pow(height, height);
-
-		if (bmi <= 18.5)
-		{
-			return "Underweight";
-		}
-		if (bmi <= 25.0)
-		{
-			return "Normal";
-		}
-		if (bmi <= 30.0)
-		{
-			return "Overweight";
-		}
-		if (bmi > 30)
-		{
-			return "Obese";
-		}
-		return null;
+		return (lang.ContainsKey(language))
+		  ? lang[language]
+		  : "Welcome";
 	}
+
+	private static readonly Dictionary<string, string> lang = new Dictionary<string, string>
+	{
+		{"english", "Welcome"},
+		{"czech", "Vitejte"},
+		{"danish", "Velkomst"},
+		{"dutch", "Welkom"},
+		{"estonian", "Tere tulemast"},
+		{"finnish", "Tervetuloa"},
+		{"flemish", "Welgekomen"},
+		{"french", "Bienvenue"},
+		{"german", "Willkommen"},
+		{"irish", "Failte"},
+		{"italian", "Benvenuto"},
+		{"latvian", "Gaidits"},
+		{"lithuanian", "Laukiamas"},
+		{"polish", "Witamy"},
+		{"spanish", "Bienvenido"},
+		{"swedish", "Valkommen"},
+		{"welsh", "Croeso"}
+	};
+
 }
