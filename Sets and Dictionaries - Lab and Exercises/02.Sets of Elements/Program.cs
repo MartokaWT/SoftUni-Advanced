@@ -1,20 +1,25 @@
-﻿HashSet<int> numSet1 = new();
-HashSet<int> numSet2 = new();
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-int[] size = Console.ReadLine()
+HashSet<int> firstSet = new();
+HashSet<int> secondSet = new();
+
+int[] counts = Console.ReadLine()
 	.Split(" ", StringSplitOptions.RemoveEmptyEntries)
 	.Select(int.Parse)
 	.ToArray();
 
-for (int i = 0; i < size[0]; i++)
+for (int i = 0; i < counts[0]; i++)
 {
-	numSet1.Add(int.Parse(Console.ReadLine()));
-}
-for (int j = 0; j < size[1]; j++)
-{
-	numSet2.Add(int.Parse(Console.ReadLine()));
+	firstSet.Add(int.Parse(Console.ReadLine()));
 }
 
-numSet1.IntersectWith(numSet2);
+for (int i = 0; i < counts[1]; i++)
+{
+	secondSet.Add(int.Parse(Console.ReadLine()));
+}
 
-Console.WriteLine(string.Join(" ", numSet1));
+firstSet.IntersectWith(secondSet);
+
+Console.WriteLine(string.Join(" ", firstSet));
