@@ -9,11 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecialCars", "SpecialCars\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefiningAClassPerson", "DefiningAClassPerson\DefiningAClassPerson.csproj", "{C3544927-9E5D-43CB-A33B-68E9D2EA591D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingConstructors", "CreatingConstructors\CreatingConstructors.csproj", "{F7C7FADA-A924-4A46-8C10-20CB3D8D67C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreatingConstructors", "CreatingConstructors\CreatingConstructors.csproj", "{F7C7FADA-A924-4A46-8C10-20CB3D8D67C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldestFamilyMember", "OldestFamilyMember\OldestFamilyMember.csproj", "{683CB8F1-DE27-472F-8736-7F9319DEA7B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldestFamilyMember", "OldestFamilyMember\OldestFamilyMember.csproj", "{683CB8F1-DE27-472F-8736-7F9319DEA7B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpinionPoll", "OpinionPoll\OpinionPoll.csproj", "{EFA54C27-A116-49DE-BCD5-A3E1BDB70B90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpinionPoll", "OpinionPoll\OpinionPoll.csproj", "{EFA54C27-A116-49DE-BCD5-A3E1BDB70B90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateModifier", "DateModifier\DateModifier.csproj", "{D6D86ADF-5A22-44F5-8098-20046F63FD9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedRacing", "SpeedRacing\SpeedRacing.csproj", "{C4841DD3-6C67-4F47-B611-DAF50941C80C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{EFA54C27-A116-49DE-BCD5-A3E1BDB70B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFA54C27-A116-49DE-BCD5-A3E1BDB70B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFA54C27-A116-49DE-BCD5-A3E1BDB70B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6D86ADF-5A22-44F5-8098-20046F63FD9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6D86ADF-5A22-44F5-8098-20046F63FD9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6D86ADF-5A22-44F5-8098-20046F63FD9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6D86ADF-5A22-44F5-8098-20046F63FD9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4841DD3-6C67-4F47-B611-DAF50941C80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4841DD3-6C67-4F47-B611-DAF50941C80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4841DD3-6C67-4F47-B611-DAF50941C80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4841DD3-6C67-4F47-B611-DAF50941C80C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
