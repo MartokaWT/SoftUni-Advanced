@@ -1,67 +1,83 @@
-﻿int rows = int.Parse(Console.ReadLine());
-double[][] jagged = new double[rows][];
-string input = "";
-for (int row = 0; row < jagged.GetLength(0); row++)
+﻿using System;
+using System.Linq;
+
+int rows = int.Parse(Console.ReadLine());
+
+int[][] jaggedArray = new int[rows][];
+
+for (int row = 0; row < rows; row++)
 {
-	double[] cols = Console.ReadLine().Split().Select(double.Parse).ToArray();
-	jagged[row] = new double[cols.Length];
-	for (int col = 0; col < cols.Length; col++)
-	{
-		jagged[row][col] = cols[col];
-	}
+	int[] cols = Console.ReadLine()
+		.Split(" ", StringSplitOptions.RemoveEmptyEntries)
+		.Select(int.Parse)
+		.ToArray();
+
+	jaggedArray[row] = cols;
 }
-for (int row = 0; row < jagged.GetLength(0) - 1; row++)
+
+for (int row = 0; row < rows - 1; row++)
 {
-	if (jagged[row].Length == jagged[row + 1].Length)
+	if (jaggedArray[row].Length == jaggedArray[row + 1].Length)
 	{
-		for (int rowCurrent = row; rowCurrent <= row + 1; rowCurrent++)
+		for (int col = 0; col < jaggedArray[row].Length; col++)
 		{
-			for (int col = 0; col < jagged[rowCurrent].Length; col++)
-			{
-				jagged[rowCurrent][col] *= 2;
-			}
+			jaggedArray[row][col] *= 2;
+			jaggedArray[row + 1][col] *= 2;
 		}
 	}
 	else
 	{
-		for (int rowCurrent = row; rowCurrent <= row + 1; rowCurrent++)
+		for (int col = 0; col < jaggedArray[row].Length; col++)
 		{
-			for (int col = 0; col < jagged[rowCurrent].Length; col++)
-			{
-				jagged[rowCurrent][col] /= 2;
-			}
+			jaggedArray[row][col] /= 2;
+		}
+
+		for (int col = 0; col < jaggedArray[row + 1].Length; col++)
+		{
+			jaggedArray[row + 1][col] /= 2;
 		}
 	}
 }
-while ((input = Console.ReadLine()) != "End")
+
+string command = string.Empty;
+
+while ((command = Console.ReadLine()) != "End")
 {
-	string[] information = input.Split();
-	if (information[0] == "Add")
+	string[] tokens = command.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+	string action = tokens[0];
+	int row = int.Parse(tokens[1]);
+	int col = int.Parse(tokens[2]);
+	int value = int.Parse(tokens[3]);
+
+	if (ValidateCell(row, col, jaggedArray))
 	{
-		int row = int.Parse(information[1]);
-		int col = int.Parse(information[2]);
-		int value = int.Parse(information[3]);
-		if (row >= 0 && row <= rows && col >= 0 && col <= jagged[row].Length)
+		if (action == "Add")
 		{
-			jagged[row][col] += value;
+			jaggedArray[row][col] += value;
 		}
-	}
-	else if (information[0] == "Subtract")
-	{
-		int row = int.Parse(information[1]);
-		int col = int.Parse(information[2]);
-		int value = int.Parse(information[3]);
-		if (row >= 0 && row <= rows && col >= 0 && col <= jagged[row].Length)
+		else
 		{
-			jagged[row][col] -= value;
+			jaggedArray[row][col] -= value;
 		}
 	}
 }
-for (int row = 0; row < jagged.GetLength(0); row++)
+
+for (int row = 0; row < rows; row++)
 {
-	for (int col = 0; col < jagged[row].Length; col++)
+	for (int col = 0; col < jaggedArray[row].Length; col++)
 	{
-		Console.Write($"{jagged[row][col]} ");
+		Console.Write($"{jaggedArray[row][col]} ");
 	}
+
 	Console.WriteLine();
+}
+
+static bool ValidateCell(int row, int col, int[][] jaggedArray)
+{
+	return
+		row >= 0
+		&& row < jaggedArray.Length
+		&& col >= 0
+		&& col < jaggedArray[row].Length;
 }
